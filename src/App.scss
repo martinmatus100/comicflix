@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Graduate&family=Kdam+Thmor+Pro&display=swap');
+
+$base-color: black;
+$high-color: #ffc107;
+$logo-font: 'Black Ops One', cursive;
+$base-font: 'Graduate', cursive;
+
 * {
   font-weight: 400;
   border: 0;
   margin: 0;
   padding: 0;
+  //font-family: 'Kdam Thmor Pro', sans-serif;
+  font-family: $base-font
 }
 *,
 *:before,
@@ -40,17 +49,50 @@ button{
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-
+  background: black;
+  
   &__logo{
     width: 50px;
     height: 50px;
     padding: 0;
     height: auto;
+    color: white;
+    text-decoration: none;
+
+    h1 {
+      font-family: $logo-font;
+      font-size: 40px;
+  
+      span {
+        color: $high-color;
+        font-family: $logo-font;
+      }
+    }
+
+    &:hover {
+      color: $high-color;
+    }
   }
+
   &__nav{
     display: grid;
     grid-auto-flow: column;
     grid-gap: 20px;
+    color: white;
+
+    &--lnk {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: $high-color;
+      }
+    }
+
+    h3 {
+      font-family: $base-font;
+      text-transform: uppercase;
+    }
   }
 
   &__nav .header__nav-item{
@@ -70,7 +112,6 @@ button{
 }
 
 .mainBox {
-  padding: 100px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -105,6 +146,23 @@ button{
   }
 }
 
+.main__btn {
+  &.--cart {
+    background: $base-color;
+    border-color: $base-color;
+
+    svg {
+      font-size: 30px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $high-color;
+      }
+    }
+  }
+}
+
 .footer {
   width: 100%;
   display: flex;
@@ -116,5 +174,18 @@ button{
   &__item {
     font-size: 14px;
     color: white;
+  }
+}
+
+.banner__top {
+  width: 100%;
+  display: flex;
+  background: $high-color;
+  height: 40px;
+  justify-content: center;
+
+  &--box {
+    display: flex;
+    align-items: center;
   }
 }
