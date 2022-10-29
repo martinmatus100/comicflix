@@ -1,14 +1,15 @@
 import Navbar from "./NavBar";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
     <header className="header">
-      <a className="header__logo" href="/">
+      <Link className="header__logo" to="/">
         <h1>
           R<span>13</span>
         </h1>
-      </a>
+      </Link>
       <Navbar />
       <CartWidget />
     </header>
