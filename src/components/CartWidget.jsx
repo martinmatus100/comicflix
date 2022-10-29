@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { GiGymBag } from 'react-icons/gi';
+import { GiGymBag } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const CartWidget = (props) => {
   const [show, setShow] = useState(false);
@@ -11,15 +12,20 @@ const CartWidget = (props) => {
   return (
     <>
       <Button className="main__btn --cart" variant="dark" onClick={handleShow}>
-      <GiGymBag />
+        <GiGymBag />
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose}  placement='end'>
+      <Offcanvas className="minicart__canvas" show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>MI CARRITO</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt dignissimos vitae at assumenda fugiat voluptates natus earum quaerat unde numquam necessitatibus aut fugit amet, mollitia temporibus perferendis accusamus placeat. */}
+          <div className="minicart__box"></div>
+          <div className="minicart__bottom">
+            <Link className="btn btn-goToCart" to="/cart">
+              Ir al carro
+            </Link>
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </>

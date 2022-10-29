@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Graduate&family=Kdam+Thmor+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Graduate&family=Kdam+Thmor+Pro&display=swap");
 
 $base-color: black;
 $high-color: #ffc107;
-$logo-font: 'Black Ops One', cursive;
-$base-font: 'Graduate', cursive;
+$logo-font: "Black Ops One", cursive;
+$base-font: "Graduate", cursive;
 
 * {
   font-weight: 400;
@@ -11,7 +11,7 @@ $base-font: 'Graduate', cursive;
   margin: 0;
   padding: 0;
   //font-family: 'Kdam Thmor Pro', sans-serif;
-  font-family: $base-font
+  font-family: $base-font;
 }
 *,
 *:before,
@@ -34,24 +34,35 @@ body {
   font-size: 1.6rem;
   letter-spacing: 0.3px;
   height: 100%;
-  
 }
-p,h1,h2,h3,h4,h5,h6{
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
-button{
+button {
   background: none;
 }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  background: black;
-  
-  &__logo{
+  background: $base-color;
+
+  &__logo {
     width: 50px;
     height: 50px;
     padding: 0;
@@ -62,7 +73,7 @@ button{
     h1 {
       font-family: $logo-font;
       font-size: 40px;
-  
+
       span {
         color: $high-color;
         font-family: $logo-font;
@@ -74,7 +85,7 @@ button{
     }
   }
 
-  &__nav{
+  &__nav {
     display: grid;
     grid-auto-flow: column;
     grid-gap: 20px;
@@ -95,17 +106,17 @@ button{
     }
   }
 
-  &__nav .header__nav-item{
+  &__nav .header__nav-item {
     color: #121212;
     font-weight: 600;
   }
-  
-  &__buttons button{
+
+  &__buttons button {
     font-size: 16px;
     padding: 5px 10px;
   }
 
-  &__buttons button:hover{
+  &__buttons button:hover {
     font-size: 16px;
     background: rgb(233, 233, 233);
   }
@@ -113,31 +124,90 @@ button{
 
 .mainBox {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
+  width: 100%;
+  flex: 100%;
+
+  .products {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 1100px;
+
+    > * {
+      flex: 100%;
+      max-width: 300px;
+    }
+  }
 }
 
 .card {
-  width: 150px;
   height: max-content;
-  background: blue;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 10px;
   align-items: center;
+  border-radius: 0 !important;
+  border: 3px solid $base-color !important;
+  justify-content: flex-start;
+
+  &:hover {
+    border-color: $high-color !important;
+  }
+
+  &__top {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 300px;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .badge {
+      font-size: 12px;
+    }
+  }
 
   &__name {
-    color: white;
-    font-size: 20px;
+    color: $base-font;
+    font-size: 15px;
     text-align: center;
+    height: 60px;
+    opacity: 0.7;
   }
 
   &__price {
     font-size: 25px;
-    color: white;
+    color: $base-font;
     font-weight: 700;
+    text-align: center;
   }
 
   &__stock {
@@ -169,23 +239,257 @@ button{
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  background: black;
+  background: $base-color;
 
   &__item {
     font-size: 14px;
     color: white;
+  }
+
+  &__nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+    color: white;
+
+    &--lnk {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: $high-color;
+      }
+
+      h3 {
+        font-family: $base-font;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.home__box {
+  .banner__top {
+    background-position: 40% 60%;
   }
 }
 
 .banner__top {
   width: 100%;
   display: flex;
-  background: $high-color;
-  height: 40px;
+  background: $base-color;
+  height: 150px;
   justify-content: center;
+  background-position: 40% 42%;
 
   &--box {
     display: flex;
     align-items: center;
+  }
+
+  &--text {
+    font-family: $logo-font;
+    font-size: 50px;
+    color: $high-color;
+    text-shadow: 3px 3px 4px black;
+  }
+}
+
+.spinner-r13 {
+  width: 200px !important;
+  height: 200px !important;
+  border-width: 10px !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 100px 0 0 -100px;
+}
+
+.product-detail .spinner-r13 {
+  margin: -100px 0 0 -100px;
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px;
+  }
+
+  &__right {
+    position: relative;
+
+    img {
+      transition: transform 0.5s ease;
+      max-height: 650px;
+    }
+
+    &:hover img {
+      transform: scale(1.2);
+    }
+  }
+
+  &--name {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 700;
+  }
+
+  &--price {
+    font-size: 50px;
+  }
+
+  &--sku {
+    font-size: 15px;
+    opacity: 0.7;
+  }
+
+  &--info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    gap: 30px;
+
+    .badge {
+      font-size: 12px;
+    }
+  }
+}
+
+.btn {
+  background-color: $base-color !important;
+  border-radius: 0 !important;
+  color: white !important;
+
+  &:hover {
+    color: $high-color !important;
+  }
+}
+
+.counter {
+  &__box {
+    margin-top: 20px;
+  }
+
+  &__qty {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-items: flex-start;
+    gap: 25px;
+    max-width: 170px;
+
+    .btn {
+      font-size: 25px;
+      line-height: 25px;
+      width: 40px;
+      height: 40px;
+    }
+
+    &--text {
+      font-size: 25px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+    }
+  }
+
+  &__submit {
+    margin-top: 15px;
+
+    .btn {
+      max-width: 170px;
+      width: 100%;
+      font-size: 13px;
+      height: 40px;
+    }
+  }
+}
+
+.minicart__canvas {
+  .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .minicart__bottom {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-goToCart {
+    font-size: 18px;
+    height: 40px;
+    max-width: 170px;
+    width: 100%;
+    text-transform: uppercase;
+  }
+}
+
+
+/// MOBILE
+@media screen and (max-width: 728px) {
+  .header__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .product-detail {
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    &__right {
+      order: 1;
+    }
+
+    &__left {
+      order: 2;
+      padding: 0 15px;
+    }
+
+    > * {
+      align-items: center;
+    }
+
+    .product-detail--name {
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .product-detail--price {
+      font-size: 40px;
+    }
+
+    .product-detail--bottom {
+      width: 100%;
+    }
+  }
+
+  .counter__submit .btn {
+    max-width: 100%;
+    font-size: 20px;
+  }
+
+  .counter__qty {
+    margin: 0 auto;
   }
 }

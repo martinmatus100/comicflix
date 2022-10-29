@@ -1,18 +1,21 @@
+import { NavLink } from "react-router-dom";
+
+const links = ["Guantes", "Bolsas", "Protectores", "Accesorios"];
+
 const Navbar = (props) => {
   return (
     <div className="header__nav">
-      <a className="header__nav--lnk" href="/">
-        <h3>Guantes</h3>
-      </a>
-      <a className="header__nav--lnk" href="/">
-        <h3>Bolsas</h3>
-      </a>
-      <a className="header__nav--lnk" href="/">
-        <h3>Protectores</h3>
-      </a>
-      <a className="header__nav--lnk" href="/">
-      <h3>Accesorios</h3>
-      </a>
+      {links.map((element) => {
+        return (
+          <NavLink
+            className="header__nav--lnk"
+            to={`/category/${element.toLowerCase()}`}
+            key={element}
+          >
+            <h3>{element}</h3>
+          </NavLink>
+        );
+      })}
     </div>
   );
 };

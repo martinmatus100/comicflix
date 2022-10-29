@@ -1,41 +1,23 @@
-//import logo from './logo.svg';
-import './App.scss';
-import Header from './components/Header';
-import ItemListContainer from './components/ItemListContainer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.scss";
+import { Layout } from "./components/Layout";
+import { Category } from "./pages/Category";
+import { Detail } from "./pages/Detail";
+import { Home } from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <main className='mainBox'>
-        <ItemListContainer greeting="ENVÍO GRATIS A PARTIR DE $5000" />
-        {/* <div className='card'>
-          <span className='card__name'>Comics Marvel</span>
-          <p className='card__description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim minus suscipit sunt minima repellendus asperiores recusandae ullam hic magnam, voluptates quia cumque architecto adipisci alias laudantium ab. Soluta, reprehenderit. Quisquam?</p>
-          <span className='card__price'>$10.00</span>
-          <span className='card__stock'>Quedan 5</span>
-        </div>
-        <div className='card'>
-          <span className='card__name'>Comics Marvel</span>
-          <p className='card__description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim minus suscipit sunt minima repellendus asperiores recusandae ullam hic magnam, voluptates quia cumque architecto adipisci alias laudantium ab. Soluta, reprehenderit. Quisquam?</p>
-          <span className='card__price'>$10.00</span>
-          <span className='card__stock'>Quedan 5</span>
-        </div>
-        <div className='card'>
-          <span className='card__name'>Comics Marvel</span>
-          <p className='card__description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim minus suscipit sunt minima repellendus asperiores recusandae ullam hic magnam, voluptates quia cumque architecto adipisci alias laudantium ab. Soluta, reprehenderit. Quisquam?</p>
-          <span className='card__price'>$10.00</span>
-          <span className='card__stock'>Quedan 5</span>
-        </div>
-        <div className='card'>
-          <span className='card__name'>Comics Marvel</span>
-          <p className='card__description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim minus suscipit sunt minima repellendus asperiores recusandae ullam hic magnam, voluptates quia cumque architecto adipisci alias laudantium ab. Soluta, reprehenderit. Quisquam?</p>
-          <span className='card__price'>$10.00</span>
-          <span className='card__stock'>Quedan 5</span>
-        </div> */}
-      </main>
-      <footer className='footer'>
-      </footer>
+      <BrowserRouter>
+        <Routes>
+          <Route path={"/"} element={<Layout />}>
+            <Route index element={<Home/>} />
+            <Route path={"/category/:idCategory"} element={<Category />} />
+            <Route path={"/product/:idProduct"} element={<Detail />} />
+            <Route path="/cart" element={<h1>CARRO</h1>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
