@@ -8,7 +8,11 @@ const Navbar = (props) => {
       {links.map((element) => {
         return (
           <NavLink
-            className="header__nav--lnk"
+            className={({ isActive }) =>
+              isActive
+                ? "header__nav--lnk header__nav--active"
+                : "header__nav--lnk"
+            }
             to={`/category/${element.toLowerCase()}`}
             key={element}
           >

@@ -4,11 +4,13 @@ import { getProduct } from "../api/products";
 import { Loader } from "../components/Loader";
 import Badge from "react-bootstrap/Badge";
 import Counter from "../components/Counter";
+import { useCartContext } from "../context/cartContext";
 
 export const Detail = () => {
   const { idProduct } = useParams({});
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
+  const { addProduct } = useCartContext();
 
   useEffect(() => {
     setLoading(true);
@@ -17,6 +19,11 @@ export const Detail = () => {
       setLoading(false);
     });
   }, [idProduct]);
+
+  const handleAdd = (qty) => {
+    addProduct(product, qty);
+  };
+
   return (
     <div className="product-detail">
       {loading ? <Loader /> : null}
@@ -33,7 +40,7 @@ export const Detail = () => {
           </Badge>
         </div>
         <div className="product-detail--bottom">
-          <Counter onAdd={() => console.log("Agregando...")} stock={20}></Counter>
+          <Counter onAdd={handleAdd} stock={product?.stock}></Counter>
         </div>
       </div>
       <div className="product-detail__right">

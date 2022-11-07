@@ -17,19 +17,20 @@ const Counter = ({ stock, onAdd }) => {
   return (
     <div className="counter__box">
       <div className="counter__qty">
-        <Button onClick={() => handleSubtract()} children="-" />
+        <Button onClick={handleSubtract} children="-" />
         <span className="counter__qty--text">{contador}</span>
         <Button
-          onClick={() => handleAdd()}
+          onClick={handleAdd}
           children="+"
         />
       </div>
       <div className="counter__submit">
         <Button
           onClick={() => {
-            if (contador) onAdd();
+            if (contador) onAdd(contador);
           }}
           children="Agregar al carrito"
+          disabled={!contador}
         />
       </div>
     </div>

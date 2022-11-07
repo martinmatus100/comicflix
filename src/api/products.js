@@ -6,6 +6,7 @@ const products = [
     imagen: "../images/P00002306.png",
     id: "P00002306",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "POWERLOCK2 - RED",
@@ -14,6 +15,7 @@ const products = [
     imagen: "../images/P00002310.png",
     id: "P00002310",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "POWERLOCK2 - BLACK",
@@ -22,6 +24,7 @@ const products = [
     imagen: "../images/P00002284.png",
     id: "P00002284",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "ELITE - GREY",
@@ -30,6 +33,7 @@ const products = [
     imagen: "../images/P00002363.png",
     id: "P00002363",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "ELITE - GOLDEN",
@@ -38,6 +42,7 @@ const products = [
     imagen: "../images/P00002349.png",
     id: "P00002349",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "ELITE - BLUE",
@@ -46,6 +51,7 @@ const products = [
     imagen: "../images/P00002331.png",
     id: "P00002331",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "ELITE - RED",
@@ -54,6 +60,7 @@ const products = [
     imagen: "../images/P00002335.png",
     id: "P00002335",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "PROFESSIONAL LEATHER",
@@ -62,6 +69,7 @@ const products = [
     imagen: "../images/691201.png",
     id: "691201",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "MMA KICKBOXING GLOVES",
@@ -70,6 +78,7 @@ const products = [
     imagen: "../images/4402B.png",
     id: "4402B",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "MANTIS PUNCH MITTS",
@@ -78,6 +87,7 @@ const products = [
     imagen: "../images/4416.png",
     id: "4416",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "PRO STYLE MUAY THAI GLOVE",
@@ -86,6 +96,7 @@ const products = [
     imagen: "../images/7012.png",
     id: "7012",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "PRO STYLE GRAPPLING GLOVES",
@@ -94,6 +105,7 @@ const products = [
     imagen: "../images/7778.png",
     id: "7778",
     categoria: "guantes",
+    stock: 20
   },
   {
     nombre: "MMA POLYCANVAS HEAVY BAG",
@@ -102,6 +114,7 @@ const products = [
     imagen: "../images/MMA4657WB.png",
     id: "MMA4657WB",
     categoria: "bolsas",
+    stock: 20
   },
   {
     nombre: "NEVATEAR DOUBLE-ENDED HEAVY BAG",
@@ -110,6 +123,7 @@ const products = [
     imagen: "../images/SH7707DEWB.png",
     id: "SH7707DEWB",
     categoria: "bolsas",
+    stock: 20
   },
   {
     nombre: "OMNISTRIKE HEAVY BAG",
@@ -118,6 +132,7 @@ const products = [
     imagen: "../images/SHMMA4788WB.png",
     id: "SHMMA4788WB",
     categoria: "bolsas",
+    stock: 20
   },
   {
     nombre: "POWERCORE NEVATEAR HEAVY BAG",
@@ -126,6 +141,7 @@ const products = [
     imagen: "../images/SH5800WB.png",
     id: "SH5800WB",
     categoria: "bolsas",
+    stock: 20
   },
   {
     nombre: "PLATINUM NEVATEAR HEAVY BAG",
@@ -134,6 +150,7 @@ const products = [
     imagen: "../images/SH5260WB.png",
     id: "SH5260WB",
     categoria: "bolsas",
+    stock: 20
   },
   {
     nombre: "EVERHIDE SPEED BAG",
@@ -142,6 +159,7 @@ const products = [
     imagen: "../images/4215.png",
     id: "4215",
     categoria: "bolsas",
+    stock: 20
   },
   {
     nombre: "EVERCOOLTM HEADGEAR",
@@ -150,6 +168,7 @@ const products = [
     imagen: "../images/4044EV.png",
     id: "4044EV",
     categoria: "protectores",
+    stock: 20
   },
   {
     nombre: "LIGHTWEIGHT SPARRING PROTECTOR",
@@ -158,6 +177,7 @@ const products = [
     imagen: "../images/760001.png",
     id: "760001",
     categoria: "protectores",
+    stock: 20
   },
   {
     nombre: "MMA SHINGUARDS",
@@ -166,6 +186,7 @@ const products = [
     imagen: "../images/7951B.png",
     id: "7951B",
     categoria: "protectores",
+    stock: 20
   },
   {
     nombre: "178 HAND WRAPS",
@@ -174,6 +195,7 @@ const products = [
     imagen: "../images/EV4855.png",
     id: "EV4855",
     categoria: "accesorios",
+    stock: 20
   },
   {
     nombre: "SINGLE MOUTH GUARD",
@@ -182,6 +204,7 @@ const products = [
     imagen: "../images/4405.png",
     id: "4405",
     categoria: "accesorios",
+    stock: 20
   },
   {
     nombre: "GLOVE BAG",
@@ -190,6 +213,7 @@ const products = [
     imagen: "../images/420D.png",
     id: "420D",
     categoria: "accesorios",
+    stock: 20
   },
 ];
 

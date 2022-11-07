@@ -1,22 +1,44 @@
 import { useNavigate } from "react-router-dom";
 import Badge from "react-bootstrap/Badge";
+import { useCartContext } from "../context/cartContext";
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = ({
+  id,
+  precio,
+  imagen,
+  nombre,
+  categoria,
+  tag,
+}) => {
   const navigate = useNavigate();
+  const { addProduct } = useCartContext();
   return (
-    <div className="card" onClick={() => navigate(`/product/${props.id}`)}>
+    <div className="card" onClick={() => navigate(`/product/${id}`)}>
       <div className="card__top">
-        <img src={props.imagen} alt={props.nombre} />
+        <img src={imagen} alt={nombre} />
       </div>
       <div className="card__content">
-        <span className="card__price">${props.precio}</span>
-        <span className="card__name">{props.nombre}</span>
+        <span className="card__price">${precio}</span>
+        <span className="card__name">{nombre}</span>
       </div>
       <div className="card__bottom">
-        <Badge bg="warning" text="dark">
-          {props.tag}
-        </Badge>
-        <Badge bg="secondary">{props.categoria}</Badge>
+        <div className="card__bottom--primary">
+          <button
+            className="card__btn btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              addProduct({ id, precio, imagen, nombre, categoria, tag }, 1);
+            }}
+          >
+            Agregar al carrito
+          </button>
+        </div>
+        <div className="card__bottom--secondary">
+          <Badge bg="warning" text="dark">
+            {tag}
+          </Badge>
+          <Badge bg="secondary">{categoria}</Badge>
+        </div>
       </div>
     </div>
   );

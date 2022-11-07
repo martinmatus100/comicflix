@@ -4,20 +4,24 @@ import { Layout } from "./components/Layout";
 import { Category } from "./pages/Category";
 import { Detail } from "./pages/Detail";
 import { Home } from "./pages/Home";
+import { CartProvider } from "./context/cartContext";
+import { Cart } from "./pages/Cart";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path={"/"} element={<Layout />}>
-            <Route index element={<Home/>} />
-            <Route path={"/category/:idCategory"} element={<Category />} />
-            <Route path={"/product/:idProduct"} element={<Detail />} />
-            <Route path="/cart" element={<h1>CARRO</h1>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path={"/"} element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path={"/category/:idCategory"} element={<Category />} />
+              <Route path={"/product/:idProduct"} element={<Detail />} />
+              <Route path="/cart" element={<Cart />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }
