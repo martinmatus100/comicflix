@@ -4,14 +4,14 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { GiGymBag } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cartContext";
-import { Cart } from "../pages/Cart";
+import { Minicart } from "./Minicart";
+
 
 const CartWidget = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const {cart, getCartQty, getTotal} = useCartContext();
-  console.log({ cart });
 
   return (
     <>
@@ -26,7 +26,7 @@ const CartWidget = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="minicart__box">
-            <Cart></Cart>
+            <Minicart></Minicart>
           </div>
           <div className="minicart__bottom">
             <div className="minicart__totals">

@@ -542,6 +542,120 @@ button {
   font-weight: 700;
 }
 
+.cart__box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1100px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 20px 0;
+  }
+
+  .cart__product--item {
+    padding: 10px;
+    background: #fbfbfb;
+
+    .cart__product--info {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .cart__product--info-qty {
+      margin-right: 0;
+      margin-left: auto;
+
+      span {
+        font-size: 14px;
+      }
+    }
+
+    .cart__product--info-price {
+      margin-right: 0;
+      margin-left: auto;
+
+      span {
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .cart-total__box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 25px;
+    padding: 20px;
+    align-items: center;
+
+    .cart-total__label {
+      opacity: 0.7;
+      font-weight: 700;
+    }
+
+    .cart-total__price {
+      font-weight: 700;
+      font-size: 30px;
+    }
+  }
+
+  .cart-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 30px auto;
+    width: 100%;
+    gap: 10px;
+
+    .cart-form__field {
+      display: flex;
+      text-transform: uppercase;
+      font-size: 12px;
+      gap: 15px;
+      align-items: center;
+
+      span {
+        width: 80px;
+      }
+
+      input {
+        border: 2px solid black;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0 10px;
+        text-align: center;
+
+        &:focus,
+        &:active,
+        &:hover,
+        &:target {
+          border-color: $high-color;
+        }
+      }
+    }
+  }
+
+  .btn-checkout {
+    font-size: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .alert.alert-success {
+    margin: 30px auto;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
 /// MOBILE
 @media screen and (max-width: 728px) {
   .header__nav {

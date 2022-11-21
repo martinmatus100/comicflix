@@ -19,10 +19,7 @@ const Counter = ({ stock, onAdd }) => {
       <div className="counter__qty">
         <Button onClick={handleSubtract} children="-" />
         <span className="counter__qty--text">{contador}</span>
-        <Button
-          onClick={handleAdd}
-          children="+"
-        />
+        <Button onClick={handleAdd} children="+" />
       </div>
       <div className="counter__submit">
         <Button
